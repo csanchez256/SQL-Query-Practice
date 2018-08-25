@@ -24,6 +24,11 @@ based on t_code table and the template - BR
  	select <column1, column2, ... >
  	from <table_name>
  	where <condition>
+
+ 	example:
+ 	SELECT dbo.ML.Pipe_Width
+	FROM ML
+	WHERE Pipe_Width > 6;
 */
 
 /*
@@ -32,6 +37,7 @@ based on t_code table and the template - BR
 
 	note: when I say "alias" i mean a 'nickname' that I bind to
 	the table name
+	good explanation here: https://www.studytonight.com/dbms/sql-alias.php
 /*
 
 With the UPDATE statement, you can change the value of one or more columns 
@@ -55,6 +61,24 @@ LEFT JOIN
 	 AS Family
 ON Family.tcodeid = T_Code.T_Code_ID
 SET T_Code.Asset_Type = Family.assettype;
+
+/*
+	GOOD EXPLANATION OF 'JOIN'
+	https://www.w3resource.com/sql/joins/perform-a-left-join.php
+
+	The whole point of 'JOIN' is that you have two tables with 
+	data you're interested in, and you want to mash the related
+	data into one table so you can see how they are connected
+
+	SYNTAX:
+
+	SELECT < col1, col2, ... >
+	FROM <Table_1>
+	LEFT JOIN <Table_2>
+	ON Table_1.col = Table_2.col
+	
+*/
+
 
 -- Make note of the counts of these results to check updates later.
 SELECT  MLO.Code,
